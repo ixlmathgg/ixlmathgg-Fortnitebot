@@ -73,7 +73,15 @@
     <h2>Games</h2>
     <div class="game-list">
         <button onclick="loadGame('https://mathpunch.github.io/kitty/')">Stickman Hook</button>
-        <!-- Other game buttons... -->
+        <button onclick="loadGame('https://mathpunch.github.io/dog/')">Super Mario 64</button>
+        <button onclick="loadGame('https://mathpunch.github.io/bear/')">Tiny Fishing</button>
+        <button onclick="loadGame('https://mathpunch.github.io/snake/')">Tap Tap Shots</button>
+        <button onclick="loadGame('https://mathpunch.github.io/shark/')">Drive Mad</button>
+        <button onclick="loadGame('https://mathpunch.github.io/zebra/')">Emulator JS</button>
+        <button onclick="loadGame('https://mathpunch.github.io/turtle/')">Wordle Unlimited</button>
+        <button onclick="loadGame('https://mathpunch.github.io/doggy/')">Fruit Ninja</button>
+        <button onclick="loadGame('https://mathpunch.github.io/fox/')">Rooftop Snipers</button>
+        <button onclick="loadGame('https://mathpunch.github.io/bat/')">Tunnel Rush</button>
     </div>
 
     <iframe id="game-frame" allowfullscreen></iframe>
@@ -92,18 +100,17 @@
             const iframe = document.getElementById('game-frame');
             if (iframe.requestFullscreen) {
                 iframe.requestFullscreen();
-            } else if (iframe.mozRequestFullScreen) { // Firefox
+            } else if (iframe.mozRequestFullScreen) {
                 iframe.mozRequestFullScreen();
-            } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari, Opera
+            } else if (iframe.webkitRequestFullscreen) {
                 iframe.webkitRequestFullscreen();
-            } else if (iframe.msRequestFullscreen) { // IE/Edge
+            } else if (iframe.msRequestFullscreen) {
                 iframe.msRequestFullscreen();
             }
         }
 
         function handleKeyDown(event) {
             if (!document.fullscreenElement) {
-                // Prevent space bar scrolling when not in fullscreen
                 if (event.code === 'Space') {
                     event.preventDefault();
                 }
