@@ -5,21 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>mathpunch Unblocked</title>
     <style>
+        html, body {
+            overflow: hidden; /* Prevent scrolling */
+            height: 100%; /* Ensure the body takes full height */
+            margin: 0; /* Remove default margin */
+        }
         body {
             font-family: Arial, sans-serif;
             background-color: #121212;
             color: #ffffff;
             text-align: center;
-            margin: 0;
             padding: 0;
         }
-        h1, h2 {
-            margin: 20px 0;
-        }
         h1 {
+            margin: 20px 0;
             color: #ffffff;
         }
         h2 {
+            margin: 20px 0;
             color: #ffcc00;
             text-transform: uppercase;
             font-size: 22px;
@@ -42,6 +45,7 @@
         }
         .game-list button:hover {
             background-color: #333;
+            color: #ffffff;
         }
         #game-frame {
             display: none;
@@ -84,6 +88,19 @@
         <button onclick="loadGame('https://mathpunch.github.io/bat/')">Tunnel Rush</button>
     </div>
 
+    <h2>Games for Emulator JS</h2>
+    <div class="game-list">
+        <button onclick="window.location.href='https://github.com/ixlmathgg/flashy/raw/main/Mario%20Kart.zip'">DS: Mario Kart</button>
+        <button onclick="window.location.href='https://github.com/ixlmathgg/Licky/raw/main/Pokemon%20Red%20Fire.zip'">GBA: Pokemon Red Fire</button>
+        <button onclick="window.location.href='https://github.com/ixlmathgg/Bean/raw/main/Mortal%20Kombat%20-%20Deadly%20Alliance%20(USA)%20(En,Fr,De,Es,It).zip'">GBA: Mortal Kombat Deadly Alliance</button>
+    </div>
+
+    <h2>Other Stuff</h2>
+    <div class="game-list">
+        <button onclick="window.location.href='https://docs.google.com/forms/d/e/1FAIpQLSc6PG1pB-SmSDqf_gJ_DYWV5HWFtGCcWpgGf2EaS0EpKcICqQ/viewform?usp=sf_link'">Game Requests</button>
+        <button onclick="window.location.href='https://www.icloud.com/shortcuts/aecde9621cc549a69306c014dba1ceb9'">Adblocker For iOS</button>
+    </div>
+
     <iframe id="game-frame" allowfullscreen></iframe>
     <button id="fullscreen-button" onclick="goFullScreen()">Full Screen</button>
 
@@ -100,25 +117,14 @@
             const iframe = document.getElementById('game-frame');
             if (iframe.requestFullscreen) {
                 iframe.requestFullscreen();
-            } else if (iframe.mozRequestFullScreen) {
+            } else if (iframe.mozRequestFullScreen) { // Firefox
                 iframe.mozRequestFullScreen();
-            } else if (iframe.webkitRequestFullscreen) {
+            } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari and Opera
                 iframe.webkitRequestFullscreen();
-            } else if (iframe.msRequestFullscreen) {
+            } else if (iframe.msRequestFullscreen) { // IE/Edge
                 iframe.msRequestFullscreen();
             }
         }
-
-        function handleKeyDown(event) {
-            if (!document.fullscreenElement) {
-                if (event.code === 'Space') {
-                    event.preventDefault();
-                }
-            }
-        }
-
-        // Listen for keydown events
-        window.addEventListener('keydown', handleKeyDown);
     </script>
 
 </body>
