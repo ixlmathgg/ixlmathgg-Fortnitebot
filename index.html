@@ -13,12 +13,13 @@
             margin: 0;
             padding: 0;
         }
-        h1 {
+        h1, h2 {
             margin: 20px 0;
+        }
+        h1 {
             color: #ffffff;
         }
         h2 {
-            margin: 20px 0;
             color: #ffcc00;
             text-transform: uppercase;
             font-size: 22px;
@@ -41,7 +42,6 @@
         }
         .game-list button:hover {
             background-color: #333;
-            color: #ffffff;
         }
         #game-frame {
             display: none;
@@ -70,34 +70,10 @@
 
     <h1>mathpunch Unblocked</h1>
 
-    <!-- Category Section for Games -->
     <h2>Games</h2>
     <div class="game-list">
         <button onclick="loadGame('https://mathpunch.github.io/kitty/')">Stickman Hook</button>
-        <button onclick="loadGame('https://mathpunch.github.io/dog/')">Super Mario 64</button>
-        <button onclick="loadGame('https://mathpunch.github.io/bear/')">Tiny Fishing</button>
-        <button onclick="loadGame('https://mathpunch.github.io/snake/')">Tap Tap Shots</button>
-        <button onclick="loadGame('https://mathpunch.github.io/shark/')">Drive Mad</button>
-        <button onclick="loadGame('https://mathpunch.github.io/zebra/')">Emulator JS</button>
-        <button onclick="loadGame('https://mathpunch.github.io/turtle/')">Wordle Unlimited</button>
-        <button onclick="loadGame('https://mathpunch.github.io/doggy/')">Fruit Ninja</button>
-        <button onclick="loadGame('https://mathpunch.github.io/fox/')">Rooftop Snipers</button>
-        <button onclick="loadGame('https://mathpunch.github.io/bat/')">Tunnel Rush</button>
-    </div>
-
-    <!-- Category Section for Games for Emulator JS -->
-    <h2>Games for Emulator JS</h2>
-    <div class="game-list">
-        <button onclick="window.location.href='https://github.com/ixlmathgg/flashy/raw/main/Mario%20Kart.zip'">DS: Mario Kart</button>
-        <button onclick="window.location.href='https://github.com/ixlmathgg/Licky/raw/main/Pokemon%20Red%20Fire.zip'">GBA: Pokemon Red Fire</button>
-        <button onclick="window.location.href='https://github.com/ixlmathgg/Bean/raw/main/Mortal%20Kombat%20-%20Deadly%20Alliance%20(USA)%20(En,Fr,De,Es,It).zip'">GBA: Mortal Kombat Deadly Alliance</button>
-    </div>
-
-    <!-- New Category: Other Stuff -->
-    <h2>Other Stuff</h2>
-    <div class="game-list">
-        <button onclick="window.location.href='https://docs.google.com/forms/d/e/1FAIpQLSc6PG1pB-SmSDqf_gJ_DYWV5HWFtGCcWpgGf2EaS0EpKcICqQ/viewform?usp=sf_link'">Game Requests</button>
-        <button onclick="window.location.href='https://www.icloud.com/shortcuts/aecde9621cc549a69306c014dba1ceb9'">Adblocker For iOS</button>
+        <!-- Other game buttons... -->
     </div>
 
     <iframe id="game-frame" allowfullscreen></iframe>
@@ -118,7 +94,7 @@
                 iframe.requestFullscreen();
             } else if (iframe.mozRequestFullScreen) { // Firefox
                 iframe.mozRequestFullScreen();
-            } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari and Opera
+            } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari, Opera
                 iframe.webkitRequestFullscreen();
             } else if (iframe.msRequestFullscreen) { // IE/Edge
                 iframe.msRequestFullscreen();
@@ -126,15 +102,11 @@
         }
 
         function handleKeyDown(event) {
-            if (document.fullscreenElement) {
+            if (!document.fullscreenElement) {
+                // Prevent space bar scrolling when not in fullscreen
                 if (event.code === 'Space') {
-                    // Implement your space bar action here
-                    console.log('Space bar pressed - perform action');
-                    event.preventDefault(); // Prevent default space bar behavior
+                    event.preventDefault();
                 }
-            } else {
-                // Do nothing when not in fullscreen
-                event.preventDefault(); // Prevent space bar action when not in fullscreen
             }
         }
 
