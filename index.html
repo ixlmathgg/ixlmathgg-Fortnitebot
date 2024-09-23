@@ -125,6 +125,13 @@
                 iframe.msRequestFullscreen();
             }
         }
+
+        // Prevent scrolling when the spacebar is pressed
+        document.addEventListener('keydown', function(event) {
+            if (event.code === 'Space') {
+                event.preventDefault(); // Prevent the default action (scrolling down)
+            }
+        });
     </script>
 
 </body>
