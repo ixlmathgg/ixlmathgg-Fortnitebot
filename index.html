@@ -125,12 +125,9 @@
         // Prevent page scrolling on spacebar press when not in fullscreen
         window.addEventListener('keydown', function(e) {
             const iframe = document.getElementById('game-frame');
-            if (iframe.style.display === 'block') {
-                if (document.fullscreenElement === iframe) {
-                    return;
-                }
+            if (iframe.style.display === 'block' && document.fullscreenElement !== iframe) {
                 if (e.key === ' ') {
-                    e.preventDefault();
+                    e.preventDefault();  // Prevent scrolling
                 }
             }
         });
